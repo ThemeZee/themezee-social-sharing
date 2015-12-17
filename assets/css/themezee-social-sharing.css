@@ -1,12 +1,12 @@
 /*
- * ThemeZee Boilerplate Addon
- * http://themezee.com/plugins/boilerplate-addon/
+ * ThemeZee Social Sharing
+ * http://themezee.com/plugins/social-sharing/
  *
  * Copyright(C) 2015, ThemeZee.com - support@themezee.com
  * License: GPL v3
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * @package ThemeZee Boilerplate Addon
+ * @package ThemeZee Social Sharing
  */
 
  
@@ -15,16 +15,16 @@
 ---------------------------------------------------------------- */
 
 /* Clearing Floats */
-.tzba-clearfix:before, 
-.tzba-clearfix:after {  
+.tzss-clearfix:before, 
+.tzss-clearfix:after {  
 	content: " ";
 	display: table;  
 }  
 
-.tzba-clearfix:after {  
+.tzss-clearfix:after {  
 	clear: both;
 }  
 
-.tzba-clearfix {
+.tzss-clearfix {
     *zoom: 1; /* For IE 6/7 only */  
 }

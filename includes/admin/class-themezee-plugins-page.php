@@ -4,7 +4,7 @@
  *
  * Registers and displays the ThemeZee Addons Page
  *
- * @package ThemeZee Boilerplate Addon
+ * @package ThemeZee Social Sharing
  */
  
 // Exit if accessed directly
@@ -40,8 +40,8 @@ class ThemeZee_Plugins_Page {
 	static function add_plugins_page() {
 			
 		add_options_page(
-			esc_html__( 'ThemeZee Plugins', 'themezee-boilerplate-addon' ),
-			esc_html__( 'ThemeZee Plugins', 'themezee-boilerplate-addon' ),
+			esc_html__( 'ThemeZee Plugins', 'themezee-social-sharing' ),
+			esc_html__( 'ThemeZee Plugins', 'themezee-social-sharing' ),
 			'manage_options',
 			'themezee-plugins',
 			array( __CLASS__, 'display_plugins_page' )
@@ -110,14 +110,14 @@ class ThemeZee_Plugins_Page {
 	*/
 	static function display_overview_page() { 
 	
-		$plugin_link = '<a target="_blank" href="http://themezee.com/plugins/" title="'. esc_html__( 'ThemeZee Plugins', 'themezee-boilerplate-addon' ) . '">'. esc_html__( 'plugins', 'themezee-boilerplate-addon' ) . '</a>';
+		$plugin_link = '<a target="_blank" href="http://themezee.com/plugins/" title="'. esc_html__( 'ThemeZee Plugins', 'themezee-social-sharing' ) . '">'. esc_html__( 'plugins', 'themezee-social-sharing' ) . '</a>';
 		?>
 		
 		<div id="themezee-plugins-overview">
 		
-			<h1 id="themezee-plugin-header"><?php esc_html_e( 'ThemeZee Plugins', 'themezee-boilerplate-addon' ); ?></h1>
+			<h1 id="themezee-plugin-header"><?php esc_html_e( 'ThemeZee Plugins', 'themezee-social-sharing' ); ?></h1>
 			<div class="themezee-plugins-intro">
-				<?php printf( esc_html__( 'You need more features and functionality? Extend your website with our customized %s.', 'themezee-boilerplate-addon' ), $plugin_link ); ?>
+				<?php printf( esc_html__( 'You need more features and functionality? Extend your website with our customized %s.', 'themezee-social-sharing' ), $plugin_link ); ?>
 			</div>
 			<hr/>
 
@@ -140,7 +140,7 @@ class ThemeZee_Plugins_Page {
 	static function get_settings_tabs() {
 
 		$tabs                 = array();
-		$tabs['overview']      = esc_html__( 'Overview', 'themezee-boilerplate-addon' );
+		$tabs['overview']      = esc_html__( 'Overview', 'themezee-social-sharing' );
 		
 		return apply_filters( 'themezee_plugins_settings_tabs', $tabs );
 	}
@@ -158,7 +158,7 @@ class ThemeZee_Plugins_Page {
 			return;
 				
 		// Enqueue Admin CSS
-		wp_enqueue_style( 'themezee-plugins-stylesheet', TZBA_PLUGIN_URL . 'assets/css/themezee-plugins.css', array(), TZBA_VERSION );
+		wp_enqueue_style( 'themezee-plugins-stylesheet', TZSS_PLUGIN_URL . 'assets/css/themezee-plugins.css', array(), TZSS_VERSION );
 		
 	}
 	
