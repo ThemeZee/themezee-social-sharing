@@ -1,0 +1,30 @@
+/*
+ * ThemeZee Boilerplate Addon
+ * http://themezee.com/plugins/boilerplate-addon/
+ *
+ * Copyright(C) 2015, ThemeZee.com - support@themezee.com
+ * License: GPL v3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package ThemeZee Boilerplate Addon
+ */
+
+ 
+/*--------------------------------------------------------------
+# General Styles
+---------------------------------------------------------------- */
+
+/* Clearing Floats */
+.tzba-clearfix:before, 
+.tzba-clearfix:after {  
+	content: " ";
+	display: table;  
+}  
+
+.tzba-clearfix:after {  
+	clear: both;
+}  
+
+.tzba-clearfix {
+    *zoom: 1; /* For IE 6/7 only */  
+}
