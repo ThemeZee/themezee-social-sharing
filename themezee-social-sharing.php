@@ -165,7 +165,7 @@ class ThemeZee_Social_Sharing {
 	 */
 	static function plugin_action_links( $actions ) {
 
-		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=themezee-plugins&tab=social' ), __( 'Settings', 'themezee-social-sharing' ) ) );
+		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=themezee-plugins&tab=social' ), __( 'Settings', 'themezee-social-sharing' ) ) );
 		
 		return array_merge( $settings_link, $actions );
 	}
@@ -219,7 +219,7 @@ class ThemeZee_Social_Sharing {
 				<p>
 					<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'themezee-social-sharing' ),
 						TZSS_NAME,
-						admin_url( 'themes.php?page=themezee-plugins&tab=social' ) ); 
+						admin_url( 'options-general.php?page=themezee-plugins&tab=social' ) ); 
 					?>
 				</p>
 			</div>

@@ -38,7 +38,7 @@ class TZSS_Settings_Page {
 	static function add_settings_page($tabs) {
 			
 		// Add Social Sharing Settings Page to Tabs List
-		$tabs['social']      = esc_html__( 'Social Sharing', 'themezee-social-sharing' );
+		$tabs['social'] = esc_html__( 'Social Sharing', 'themezee-social-sharing' );
 		
 		return $tabs;
 		

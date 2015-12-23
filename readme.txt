@@ -20,7 +20,7 @@ For detailed setup instructions, visit the official [Documentation](http://theme
 == Installation ==
 
 1. Activate the plugin
-2. Go to Appearance > Theme Addons > Social Sharing and enable all the modules you need
+2. Go to Settings > ThemeZee Plugins > Social Sharing and enable all the modules you need
 3. For detailed setup instructions, visit the official [Documentation](http://themezee.com/docs/social-sharing-documentation/) page
 
 == Changelog ==
