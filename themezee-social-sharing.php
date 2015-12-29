@@ -189,7 +189,7 @@ class ThemeZee_Social_Sharing {
 			<dd>
 				<p><?php echo wp_kses_post( $plugin_data['Description'] ); ?><br/></p>
 				<a href="<?php echo admin_url( 'options-general.php?page=themezee-plugins&tab=social' ); ?>" class="button button-primary"><?php esc_html_e( 'Plugin Settings', 'themezee-social-sharing' ); ?></a>&nbsp;
-				<a href="<?php echo esc_url( 'https://themezee.com/docs/social-sharing-documentation/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Documentation', 'themezee-social-sharing' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themezee.com/docs/social-sharing-documentation/?utm_source=plugin-overview&utm_medium=button&utm_campaign=social-sharing&utm_content=documentation' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Documentation', 'themezee-social-sharing' ); ?></a>
 			</dd>
 		</dl>
 		

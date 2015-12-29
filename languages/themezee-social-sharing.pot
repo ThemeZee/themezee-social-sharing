@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeZee Social Sharing\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2015-11-26 10:33+0100\n"
-"PO-Revision-Date: 2015-11-26 10:33+0100\n"
+"POT-Creation-Date: 2015-12-29 14:55+0100\n"
+"PO-Revision-Date: 2015-12-29 14:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -20,59 +20,60 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: themezee-social-sharing.php:172
+#: themezee-social-sharing.php:168
+msgid "Settings"
+msgstr ""
+
+#: themezee-social-sharing.php:187
 #, php-format
 msgid "Version %s"
 msgstr ""
 
-#: themezee-social-sharing.php:176
+#: themezee-social-sharing.php:191
 msgid "Plugin Settings"
 msgstr ""
 
-#: themezee-social-sharing.php:177
+#: themezee-social-sharing.php:192
 msgid "View Documentation"
 msgstr ""
 
-#: themezee-social-sharing.php:205
+#: themezee-social-sharing.php:220
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: includes/class-themezee-plugins-page.php:43
-#: includes/class-themezee-plugins-page.php:113
-#: includes/class-themezee-plugins-page.php:118
+#: includes/admin/class-themezee-plugins-page.php:43
+#: includes/admin/class-themezee-plugins-page.php:44
+#: includes/admin/class-themezee-plugins-page.php:113
+#: includes/admin/class-themezee-plugins-page.php:118
 msgid "ThemeZee Plugins"
 msgstr ""
 
-#: includes/class-themezee-plugins-page.php:44
-msgid "Theme Plugins"
-msgstr ""
-
-#: includes/class-themezee-plugins-page.php:113
+#: includes/admin/class-themezee-plugins-page.php:113
 msgid "plugins"
 msgstr ""
 
-#: includes/class-themezee-plugins-page.php:120
+#: includes/admin/class-themezee-plugins-page.php:120
 #, php-format
 msgid ""
 "You need more features and functionality? Extend your website with our "
 "customized %s."
 msgstr ""
 
-#: includes/class-themezee-plugins-page.php:143
+#: includes/admin/class-themezee-plugins-page.php:143
 msgid "Overview"
 msgstr ""
 
-#: includes/class-tzss-plugin-updater.php:177
+#: includes/admin/class-tzss-plugin-updater.php:177
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
 "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
 
-#: includes/class-tzss-plugin-updater.php:184
+#: includes/admin/class-tzss-plugin-updater.php:184
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
@@ -80,16 +81,16 @@ msgid ""
 "\">update now</a>."
 msgstr ""
 
-#: includes/class-tzss-plugin-updater.php:324
+#: includes/admin/class-tzss-plugin-updater.php:324
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: includes/class-tzss-plugin-updater.php:324
+#: includes/admin/class-tzss-plugin-updater.php:324
 msgid "Error"
 msgstr ""
 
-#: includes/settings/class-tzss-settings-page.php:44
-#: includes/settings/class-tzss-settings-page.php:62
+#: includes/settings/class-tzss-settings-page.php:41
+#: includes/settings/class-tzss-settings-page.php:59
 msgid "Social Sharing"
 msgstr ""
 
