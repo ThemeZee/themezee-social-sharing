@@ -130,7 +130,7 @@ class ThemeZee_Social_Sharing {
 		// Add Settings link to Plugin actions
 		add_filter( 'plugin_action_links_' . plugin_basename( TZSS_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
 		
-		// Add Social Sharing Box to Add-on Overview Page
+		// Add Social Sharing Box to Plugin Overview Page
 		add_action( 'themezee_plugins_overview_page', array( __CLASS__, 'plugin_overview_page' ) );
 		
 		// Add License Key admin notice
