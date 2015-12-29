@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: ThemeZee Social Sharing
-Plugin URI: http://themezee.com/plugins/social-sharing/
+Plugin URI: https://themezee.com/plugins/social-sharing/
 Description: This plugin adds social sharing icons
 Author: ThemeZee
-Author URI: http://themezee.com/
+Author URI: https://themezee.com/
 Version: 1.0
 Text Domain: themezee-social-sharing
 Domain Path: /languages/
@@ -189,7 +189,7 @@ class ThemeZee_Social_Sharing {
 			<dd>
 				<p><?php echo wp_kses_post( $plugin_data['Description'] ); ?><br/></p>
 				<a href="<?php echo admin_url( 'options-general.php?page=themezee-plugins&tab=social' ); ?>" class="button button-primary"><?php esc_html_e( 'Plugin Settings', 'themezee-social-sharing' ); ?></a>&nbsp;
-				<a href="<?php echo esc_url( 'http://themezee.com/docs/social-sharing-documentation/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Documentation', 'themezee-social-sharing' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themezee.com/docs/social-sharing-documentation/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Documentation', 'themezee-social-sharing' ); ?></a>
 			</dd>
 		</dl>
 		

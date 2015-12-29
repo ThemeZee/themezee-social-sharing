@@ -182,7 +182,7 @@ class TZSS_Settings {
 	 * @return void
 	*/
 	function license_section_intro() {
-		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'http://themezee.com/support/' );
+		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'https://themezee.com/support/' );
 
 	}
 	

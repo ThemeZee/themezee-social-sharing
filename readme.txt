@@ -1,6 +1,6 @@
 === ThemeZee Social Sharing ===
-Author URI: http://themezee.com
-Plugin URI: http://themezee.com/plugins/social-sharing/
+Author URI: https://themezee.com
+Plugin URI: https://themezee.com/plugins/social-sharing/
 Contributors: themezee
 Requires at least: 4.1
 Tested up to: 4.4
@@ -15,13 +15,13 @@ The *ThemeZee Social Sharing* is a collection of useful widgets, neatly bundled 
 
 = Documentation =
 
-For detailed setup instructions, visit the official [Documentation](http://themezee.com/docs/social-sharing-documentation/) page
+For detailed setup instructions, visit the official [Documentation](https://themezee.com/docs/social-sharing-documentation/) page
 
 == Installation ==
 
 1. Activate the plugin
 2. Go to Settings > ThemeZee Plugins > Social Sharing and enable all the modules you need
-3. For detailed setup instructions, visit the official [Documentation](http://themezee.com/docs/social-sharing-documentation/) page
+3. For detailed setup instructions, visit the official [Documentation](https://themezee.com/docs/social-sharing-documentation/) page
 
 == Changelog ==
 
