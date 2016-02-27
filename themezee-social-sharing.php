@@ -69,10 +69,13 @@ class ThemeZee_Social_Sharing {
 		define( 'TZSS_VERSION', '1.0' );
 		
 		// Define Plugin Name
-		define( 'TZSS_PRODUCT_ID', 99999 );
+		define( 'TZSS_PRODUCT_ID', 56016 );
 
 		// Define Update API URL
-		define( 'TZSS_STORE_API_URL', 'https://themezee.com' ); 
+		define( 'TZSS_STORE_API_URL', 'https://themezee.com' );
+		
+		// Define Plugin Name
+		define( 'TZSS_LICENSE', '619a16aa9887cd4b28bd03eb4dd8fd14' );
 
 		// Plugin Folder Path
 		define( 'TZSS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -213,11 +216,11 @@ class ThemeZee_Social_Sharing {
 		// Get Settings
 		$options = TZSS_Settings::instance();
 		
-		if( '' == $options->get( 'license_key' ) ) : ?>
+		if( 'valid' <> $options->get( 'license_status' ) ) : ?>
 			
 			<div class="updated">
 				<p>
-					<?php printf( __( 'Please enter your license key for the %1$s add-on in order to receive updates and support. <a href="%2$s">Enter License Key</a>', 'themezee-social-sharing' ),
+					<?php printf( __( 'Please activate your license for the %1$s plugin in order to receive updates and support. <a href="%2$s">Activate License</a>', 'themezee-social-sharing' ),
 						TZSS_NAME,
 						admin_url( 'options-general.php?page=themezee-plugins&tab=social' ) ); 
 					?>
@@ -242,14 +245,12 @@ class ThemeZee_Social_Sharing {
 		
 		$options = TZSS_Settings::instance();
 
-		if( $options->get( 'license_key' ) <> '' ) :
-			
-			$license_key = $options->get( 'license_key' );
+		if( 'valid' == $options->get( 'license_status' ) ) :
 			
 			// setup the updater
 			$tzss_updater = new TZSS_Plugin_Updater( TZSS_STORE_API_URL, __FILE__, array(
 					'version' 	=> TZSS_VERSION,
-					'license' 	=> $license_key,
+					'license' 	=> TZSS_LICENSE,
 					'item_name' => TZSS_NAME,
 					'item_id'   => TZSS_PRODUCT_ID,
 					'author' 	=> 'ThemeZee'

@@ -53,7 +53,6 @@ class TZSS_Settings {
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_init', array( $this, 'activate_license' ) );
 		add_action( 'admin_init', array( $this, 'deactivate_license' ) );
-		add_action( 'admin_init', array( $this, 'check_license' ) );
 		
 		// Merge Plugin Options Array from Database with Default Settings Array
 		$this->options = wp_parse_args( 
@@ -182,8 +181,7 @@ class TZSS_Settings {
 	 * @return void
 	*/
 	function license_section_intro() {
-		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=social-sharing&utm_content=support' );
-
+		printf( __( 'Please activate your license in order to receive automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=related-posts&utm_content=support' );
 	}
 	
 	
@@ -401,8 +399,8 @@ class TZSS_Settings {
 				'type' => 'rich_editor',
 				'default' => ''
 			),
-			'license_key' => array(
-				'name' => __( 'License Key', 'themezee-social-sharing' ),
+			'activate_license' => array(
+				'name' => esc_html__( 'Activate License', 'themezee-social-sharing' ),
 				'section' => 'license',
 				'type' => 'license',
 				'default' => ''
@@ -516,16 +514,10 @@ class TZSS_Settings {
 	 * @return void
 	 */
 	function license_callback( $args ) {
-
-		if ( isset( $this->options[ $args['id'] ] ) )
-			$value = $this->options[ $args['id'] ];
-		else
-			$value = isset( $args['default'] ) ? $args['default'] : '';
-
-		$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
-		$html = '<input type="text" class="' . $size . '-text" id="tzss_settings[' . $args['id'] . ']" name="tzss_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/><br/><br/>';
+	
+		$html = '';
 		$license_status = $this->get( 'license_status' );
-		$license_key = ! empty( $value ) ? $value : false;
+		$license_key = TZSS_LICENSE;
 
 		if( 'valid' === $license_status && ! empty( $license_key ) ) {
 			$html .= '<input type="submit" class="button" name="tzss_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'themezee-social-sharing' ) . '"/>';
@@ -678,12 +670,8 @@ class TZSS_Settings {
 		if( ! isset( $_POST['tzss_activate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['tzss_settings']['license_key'] ) )
-			return;
-
 		// retrieve the license from the database
 		$status  = $this->get( 'license_status' );
-		$license = trim( $_POST['tzss_settings']['license_key'] );
 
 		if( 'valid' == $status )
 			return; // license already activated and valid
@@ -691,7 +679,7 @@ class TZSS_Settings {
 		// data to send in our API request
 		$api_params = array(
 			'edd_action'=> 'activate_license',
-			'license' 	=> $license,
+			'license' 	=> TZSS_LICENSE,
 			'item_name' => urlencode( TZSS_NAME ),
 			'item_id'   => TZSS_PRODUCT_ID,
 			'url'       => home_url()
@@ -713,8 +701,6 @@ class TZSS_Settings {
 
 		update_option( 'tzss_settings', $options );
 
-		delete_transient( 'tzss_license_check' );
-
 	}
 	
 	/**
@@ -730,93 +716,15 @@ class TZSS_Settings {
 		if( ! isset( $_POST['tzss_deactivate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['tzss_settings']['license_key'] ) )
-			return;
-
-		// retrieve the license from the database
-		$license = trim( $_POST['tzss_settings']['license_key'] );
-
-		// data to send in our API request
-		$api_params = array(
-			'edd_action'=> 'deactivate_license',
-			'license' 	=> $license,
-			'item_name' => urlencode( TZSS_NAME ),
-			'url'       => home_url()
-		);
-		
-		// Call the custom API.
-		$response = wp_remote_post( TZSS_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
-
-		// make sure the response came back okay
-		if ( is_wp_error( $response ) )
-			return false;
-
+		// Get Options
 		$options = $this->get_all();
 
+		// Set License Status to false
 		$options['license_status'] = 0;
 
+		// Update Option
 		update_option( 'tzss_settings', $options );
 
-		delete_transient( 'tzss_license_check' );
-
-	}
-
-	/**
-	 * Check license key
-	 *
-	 * @return void
-	*/
-	public function check_license() {
-
-		if( ! empty( $_POST['tzss_settings'] ) ) {
-			return; // Don't fire when saving settings
-		}
-
-		$status = get_transient( 'tzss_license_check' );
-
-		// Run the license check a maximum of once per day
-		if( false === $status ) {
-
-			// data to send in our API request
-			$api_params = array(
-				'edd_action'=> 'check_license',
-				'license' 	=> $this->get( 'license_key' ),
-				'item_name' => urlencode( TZSS_NAME ),
-				'url'       => home_url()
-			);
-			
-			// Call the custom API.
-			$response = wp_remote_post( TZSS_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
-
-			// make sure the response came back okay
-			if ( is_wp_error( $response ) )
-				return false;
-
-			$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-			$options = $this->get_all();
-
-			$options['license_status'] = $license_data->license;
-
-			update_option( 'tzss_settings', $options );
-
-			set_transient( 'tzss_license_check', $license_data->license, DAY_IN_SECONDS );
-
-			$status = $license_data->license;
-
-		}
-
-		return $status;
-
-	}
-	
-	/**
-	 * Retrieve license status
-	 *
-	 * @return bool
-	*/
-	public function is_license_valid() {
-		return $this->check_license() == 'valid';
 	}
 
 }
