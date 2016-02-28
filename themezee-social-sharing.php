@@ -208,8 +208,8 @@ class ThemeZee_Social_Sharing {
 	
 		global $pagenow;
 	
-		// Display only on Plugins page
-		if ( 'plugins.php' !== $pagenow  ) {
+		// Display only on Plugins and Updates page
+		if ( ! ( 'plugins.php' == $pagenow or 'update-core.php' == $pagenow ) ) {
 			return;
 		}
 		
