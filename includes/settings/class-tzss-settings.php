@@ -129,9 +129,8 @@ class TZSS_Settings {
 		}
 		
 		// Add Sections
-		add_settings_section( 'tzss_settings_widgets', esc_html__( 'General', 'themezee-social-sharing' ), array( $this, 'general_section_intro' ), 'tzss_settings' );
-		add_settings_section( 'tzss_settings_example_one', __('Example 1', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
-		add_settings_section( 'tzss_settings_example_two', __('Example 2', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
+		add_settings_section( 'tzss_settings_general', esc_html__( 'General Options', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
+		add_settings_section( 'tzss_settings_colors', esc_html__( 'Color Options', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
 		add_settings_section( 'tzss_settings_license', esc_html__( 'License', 'themezee-social-sharing' ), array( $this, 'license_section_intro' ), 'tzss_settings' );
 		
 		// Add Settings
@@ -167,22 +166,12 @@ class TZSS_Settings {
 
 	
 	/**
-	 * General Section Intro
-	 *
-	 * @return void
-	*/
-	function general_section_intro() {
-		esc_html_e( 'Configure the Social Sharing.', 'themezee-social-sharing');
-	}
-	
-	
-	/**
 	 * License Section Intro
 	 *
 	 * @return void
 	*/
 	function license_section_intro() {
-		printf( __( 'Please activate your license in order to receive automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=related-posts&utm_content=support' );
+		printf( __( 'Please activate your license in order to receive automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'themezee-social-sharing' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=social-shargin&utm_content=support' );
 	}
 	
 	
@@ -281,124 +270,45 @@ class TZSS_Settings {
 	function get_registered_settings() {
 
 		$settings = array(
-			'textfield' => array(
-				'name' =>  __('Textfield', 'themezee-social-sharing'),
-				'desc' => __('Displays a textfield setting. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'text',
-				'size' => 'regular' // Delete that line for normal text field
-			),
-			'textfield_small' => array(
-				'name' =>  __('Textfield Small', 'themezee-social-sharing'),
-				'desc' => __('Displays a small textfield setting. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'text',
-				'size' => 'small',
-				'default' => ''
-			),
-			'textfield_large' => array(
-				'name' =>  __('Textfield Large', 'themezee-social-sharing'),
-				'desc' => __('Displays a large textfield setting. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'text',
-				'size' => 'large',
-				'default' => ''
-			),
-			'radio_button' => array(
-				'name' =>  __('Radio Buttons', 'themezee-social-sharing'),
-				'desc' => __('Shows an example radio button control. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'radio',
+			'networks' => array(
+				'name' => esc_html__( 'Social Networks', 'themezee-social-sharing' ),
+				'section' => 'general',
+				'type' => 'multicheck',
 				'options' => array(	
-					'radio_1' => __('Radio Setting 1', 'themezee-social-sharing'),	
-					'radio_2' => __('Radio Setting 2', 'themezee-social-sharing'),	
-					'radio_3' => __('Radio Setting 3', 'themezee-social-sharing')
+					'facebook' => esc_html__( 'Facebook', 'themezee-social-sharing' ),	
+					'twitter' => esc_html__( 'Twitter', 'themezee-social-sharing' ),	
+					'google' => esc_html__( 'Google+', 'themezee-social-sharing' ),
+					'buffer' => esc_html__( 'Buffer', 'themezee-social-sharing' ),	
+					'linkedin' => esc_html__( 'LinkedIn', 'themezee-social-sharing' ),	
+					'pinterest' => esc_html__( 'Pinterest', 'themezee-social-sharing' ),
+					'stumbleupon' => esc_html__( 'StumbleUpon', 'themezee-social-sharing' ),
+					'email' => esc_html__( 'Email', 'themezee-social-sharing' ),
 				),
-				'default' => 'radio_2'
+				'default' => false
 			),
-			'checkbox' => array(
-				'name' =>  __('Checkbox', 'themezee-social-sharing'),
-				'desc' => __('Displays an example checkbox (default = true). ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'checkbox',
-				'default' => true
+			'locations' => array(
+				'name' => esc_html__( 'Choose Locations', 'themezee-social-sharing' ),
+				'section' => 'general',
+				'type' => 'multicheck',
+				'options' => array(	
+					'above_content' => esc_html__( 'Display share buttons above content', 'themezee-social-sharing' ),	
+					'below_content' => esc_html__( 'Display share buttons below content', 'themezee-social-sharing' ),
+				),
+				'default' => false
 			),
-			'checkbox_2' => array(
-				'name' =>  __('Checkbox 2', 'themezee-social-sharing'),
-				'desc' => __('Displays a second example checkbox (default = false). ', 'themezee-social-sharing'),
-				'section' => 'example_one',
+			'labels' => array(
+				'name' =>  esc_html__( 'Network Labels', 'themezee-social-sharing' ),
+				'desc' => esc_html__( 'Display social networks labels.', 'themezee-social-sharing' ),
+				'section' => 'general',
 				'type' => 'checkbox',
 				'default' => false
 			),
-			'textarea' => array(
-				'name' =>  __('Textarea', 'themezee-social-sharing'),
-				'desc' => __('Displays a textarea. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'textarea',
-				'size' => 'large',
-				'default' => __('Default Text', 'themezee-social-sharing')	
-			),
-			'textarea_html' => array(
-				'name' =>  __('Textarea HTML', 'themezee-social-sharing'),
-				'desc' => __('Displays a HTML textarea. ', 'themezee-social-sharing'),
-				'section' => 'example_one',
-				'type' => 'textarea_html',
-				'size' => 'large',
-				'default' => __('Default HTML', 'themezee-social-sharing')	
-			),
-			'select_field' => array(
-				'name' =>  __('Select Field', 'themezee-social-sharing'),
-				'desc' => __('Shows an example select field control. ', 'themezee-social-sharing'),
-				'section' => 'example_two',
-				'type' => 'select',
-				'options' => array(	
-					'select_1' => __('Select Setting 1', 'themezee-social-sharing'),	
-					'select_2' => __('Select Setting 2', 'themezee-social-sharing'),	
-					'select_3' => __('Select Setting 3', 'themezee-social-sharing')
-				),
-				'default' => 'select_3'
-			),
-			'multicheck' => array(
-				'name' => __( 'Multi Checkbox', 'themezee-social-sharing' ),
-				'desc' => __( 'Select multiple checkboxes.', 'themezee-social-sharing' ),
-				'section' => 'example_two',
-				'type' => 'multicheck',
-				'options' => array(	
-					'check_1' => __('Checkbox Setting 1', 'themezee-social-sharing'),	
-					'check_2' => __('Checkbox Setting 2', 'themezee-social-sharing'),	
-					'check_3' => __('Checkbox Setting 3', 'themezee-social-sharing')
-				),
-				'default' => true
-			),
-			'number' => array(
-				'name' =>  __('Number', 'themezee-social-sharing'),
-				'desc' => __('Example number setting', 'themezee-social-sharing'),
-				'section' => 'example_two',
-				'type' => 'number',
-				'max' => 80,
-				'min' => 3,
-				'step' => 0.5,
-				'default' => 4
-			),
-			'upload' => array(
-				'name' =>  __('File Upload', 'themezee-social-sharing'),
-				'desc' => __('Example uploader', 'themezee-social-sharing'),
-				'section' => 'example_two',
-				'type' => 'upload',
-				'default' => ''
-			),
-			'missing' => array(
-				'name' =>  __('Missing Callback', 'themezee-social-sharing'),
-				'desc' => __('No Setting exists for that type', 'themezee-social-sharing'),
-				'section' => 'example_two',
-				'type' => 'blablub',
-				'default' => ''
-			),
-			'editor' => array(
-				'name' =>  __('Editor', 'themezee-social-sharing'),
-				'section' => 'example_two',
-				'type' => 'rich_editor',
-				'default' => ''
+			'colors' => array(
+				'name' =>  esc_html__( 'Custom Colors', 'themezee-social-sharing' ),
+				'desc' => esc_html__( 'Enable custom colors', 'themezee-social-sharing' ),
+				'section' => 'colors',
+				'type' => 'checkbox',
+				'default' => false
 			),
 			'activate_license' => array(
 				'name' => esc_html__( 'Activate License', 'themezee-social-sharing' ),
