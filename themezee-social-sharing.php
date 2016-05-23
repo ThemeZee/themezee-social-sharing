@@ -52,6 +52,9 @@ class ThemeZee_Social_Sharing {
 		// Setup Action Hooks
 		self::setup_actions();
 		
+		// Run Social Sharing Class
+		TZSS_Social_Sharing::instance();
+		
 	}
 	
 	
@@ -115,6 +118,9 @@ class ThemeZee_Social_Sharing {
 		// Include Settings Classes
 		require_once TZSS_PLUGIN_DIR . '/includes/settings/class-tzss-settings.php';
 		require_once TZSS_PLUGIN_DIR . '/includes/settings/class-tzss-settings-page.php';
+		
+		// Include Social Sharing Class
+		require_once TZSS_PLUGIN_DIR . '/includes/class-tzss-social-sharing.php';
 		
 	}
 	

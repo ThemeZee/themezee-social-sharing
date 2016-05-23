@@ -28,3 +28,114 @@
 .tzss-clearfix {
     *zoom: 1; /* For IE 6/7 only */  
 }
+
+/*--------------------------------------------------------------
+# Layouts
+---------------------------------------------------------------- */
+.themezee-social-sharing {
+	margin: 1em 0;
+}
+
+.tzss-share-buttons-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -12px;
+}
+
+.tzss-share-buttons-list .tzss-share-item {
+	display: block;
+	padding: 0 12px 12px 0;
+	min-width: 150px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tzss-1-columns .tzss-share-item { width: 100%; }
+.tzss-2-columns .tzss-share-item { width: 50%; }
+.tzss-3-columns .tzss-share-item { width: 33.3333333333%; }
+.tzss-4-columns .tzss-share-item { width: 25%; }
+.tzss-5-columns .tzss-share-item { width: 20%; }
+.tzss-6-columns .tzss-share-item { width: 16.6666666667%; }
+.tzss-7-columns .tzss-share-item { width: 14.2857142857%; }
+.tzss-8-columns .tzss-share-item { width: 12.5%; }
+
+/*--------------------------------------------------------------
+# Share Links
+---------------------------------------------------------------- */
+.tzss-link {
+	display: block;
+	margin: 0;
+	padding: 8px 15px;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	color: #fff;
+	background: none;
+	border: none;
+	vertical-align: baseline;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.tzss-link:link,
+.tzss-link:visited,
+.tzss-link:hover,
+.tzss-link:active,
+.tzss-link:focus {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.tzss-link:hover,
+.tzss-link:active,
+.tzss-link:focus {
+	background: rgba(0,0,0,0.15);
+}
+
+/*--------------------------------------------------------------
+# Share Buttons
+---------------------------------------------------------------- */
+.tzss-button {
+	display: block;
+	background: #444;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.tzss-twitter {
+    background: #00aced;
+}
+ 
+.tzss-facebook {
+    background: #3B5997;
+}
+ 
+.tzss-googleplus {
+    background: #D64937;
+}
+ 
+.tzss-buffer {
+    background: #444;
+}
+ 
+.tzss-pinterest {
+    background: #bd081c;
+}
+
+.tzss-email {
+    background: #8C8C8C;
+}

@@ -277,7 +277,7 @@ class TZSS_Settings {
 				'options' => array(	
 					'facebook' => esc_html__( 'Facebook', 'themezee-social-sharing' ),	
 					'twitter' => esc_html__( 'Twitter', 'themezee-social-sharing' ),	
-					'google' => esc_html__( 'Google+', 'themezee-social-sharing' ),
+					'googleplus' => esc_html__( 'Google+', 'themezee-social-sharing' ),
 					'buffer' => esc_html__( 'Buffer', 'themezee-social-sharing' ),	
 					'linkedin' => esc_html__( 'LinkedIn', 'themezee-social-sharing' ),	
 					'pinterest' => esc_html__( 'Pinterest', 'themezee-social-sharing' ),
