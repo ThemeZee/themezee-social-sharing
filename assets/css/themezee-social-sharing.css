@@ -30,7 +30,7 @@
 }
 
 /*--------------------------------------------------------------
-# Layouts
+# Layout
 ---------------------------------------------------------------- */
 .themezee-social-sharing {
 	margin: 1em 0;
@@ -47,8 +47,8 @@
 
 .tzss-share-buttons-list .tzss-share-item {
 	display: block;
-	padding: 0 12px 12px 0;
-	min-width: 150px;
+	flex-grow: 1;
+	padding: 0 10px 10px 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -111,31 +111,77 @@
 .tzss-button {
 	display: block;
 	background: #444;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .tzss-twitter {
-    background: #00aced;
+    background: #55acee;
 }
  
 .tzss-facebook {
-    background: #3B5997;
+    background: #3b5998;
 }
  
 .tzss-googleplus {
-    background: #D64937;
+    background: #dc4e41;
 }
  
 .tzss-buffer {
-    background: #444;
+    background: #323b43;
+}
+
+.tzss-linkedin {
+    background: #0077b5;
 }
  
 .tzss-pinterest {
     background: #bd081c;
 }
 
-.tzss-email {
-    background: #8C8C8C;
+.tzss-stumbleupon {
+    background: #eb4924;
 }
+
+.tzss-email {
+    background: #8c8c8c;
+}
+
+/*--------------------------------------------------------------
+# Styles
+---------------------------------------------------------------- */
+.tzss-style-icons .tzss-link {
+	font-size: 0;
+	padding: 8px 15px;
+}
+
+.tzss-style-icons .tzss-link:before {
+	font-family: 'socicons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+	vertical-align: text-bottom;
+}
+
+.tzss-style-icons .tzss-twitter .tzss-link:before { content: "\e040"; }
+.tzss-style-icons .tzss-facebook .tzss-link:before { content: "\e041"; }
+.tzss-style-icons .tzss-googleplus .tzss-link:before { content: "\e042"; }
+.tzss-style-icons .tzss-buffer .tzss-link:before { content: "\e018"; }
+.tzss-style-icons .tzss-linkedin .tzss-link:before { content: "\e049"; }
+.tzss-style-icons .tzss-pinterest .tzss-link:before { content: "\e043"; }
+.tzss-style-icons .tzss-stumbleupon .tzss-link:before { content: "\e024"; }
+.tzss-style-icons .tzss-email .tzss-link:before { content: "\e01f"; }

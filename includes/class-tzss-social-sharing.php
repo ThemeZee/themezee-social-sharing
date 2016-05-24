@@ -129,12 +129,22 @@ class TZSS_Social_Sharing {
 		
 		$classes = '';
 		
-		if( true == $this->settings['labels'] ) {
+		// Add Styling Class
+		if( 'icons' == $this->settings['style'] ) {
 		
-			$classes = 'tzss-network-labels';
+			$classes = 'tzss-style-icons';
 			
+		} elseif( 'labels' == $this->settings['style'] ) {
+		
+			$classes = 'tzss-style-labels';
+			
+		} else {
+			
+			$classes = 'tzss-style-icons-labels';
+		
 		}
 		
+		// Add Number of Columns
 		$columns = count( $this->share_buttons() );
 		$classes .= ' tzss-' . $columns . '-columns';
 		

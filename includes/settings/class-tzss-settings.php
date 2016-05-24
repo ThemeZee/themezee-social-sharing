@@ -130,7 +130,6 @@ class TZSS_Settings {
 		
 		// Add Sections
 		add_settings_section( 'tzss_settings_general', esc_html__( 'General Options', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
-		add_settings_section( 'tzss_settings_colors', esc_html__( 'Color Options', 'themezee-social-sharing' ), '__return_false', 'tzss_settings' );
 		add_settings_section( 'tzss_settings_license', esc_html__( 'License', 'themezee-social-sharing' ), array( $this, 'license_section_intro' ), 'tzss_settings' );
 		
 		// Add Settings
@@ -296,19 +295,16 @@ class TZSS_Settings {
 				),
 				'default' => false
 			),
-			'labels' => array(
-				'name' =>  esc_html__( 'Network Labels', 'themezee-social-sharing' ),
-				'desc' => esc_html__( 'Display social networks labels.', 'themezee-social-sharing' ),
+			'style' => array(
+				'name' =>  esc_html__( 'Button Style', 'themezee-social-sharingn' ),
 				'section' => 'general',
-				'type' => 'checkbox',
-				'default' => false
-			),
-			'colors' => array(
-				'name' =>  esc_html__( 'Custom Colors', 'themezee-social-sharing' ),
-				'desc' => esc_html__( 'Enable custom colors', 'themezee-social-sharing' ),
-				'section' => 'colors',
-				'type' => 'checkbox',
-				'default' => false
+				'type' => 'select',
+				'options' => array(	
+					'icons' => esc_html__( 'Display Icons', 'themezee-social-sharingn' ),	
+					'labels' => esc_html__( 'Display Labels', 'themezee-social-sharingn' ),	
+					'both' => esc_html__( 'Display Icons and Labels', 'themezee-social-sharingn' )
+				),
+				'default' => 'icons'
 			),
 			'activate_license' => array(
 				'name' => esc_html__( 'Activate License', 'themezee-social-sharing' ),
