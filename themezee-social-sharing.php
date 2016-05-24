@@ -160,9 +160,6 @@ class ThemeZee_Social_Sharing {
 		// Enqueue Plugin Stylesheet
 		wp_enqueue_style( 'themezee-social-sharing', TZSS_PLUGIN_URL . 'assets/css/themezee-social-sharing.css', array(), TZSS_VERSION );
 		
-		// Enqueue Socicons
-		wp_enqueue_style( 'tzss-socicons', TZSS_PLUGIN_URL . 'assets/socicons/socicons.css', array(), TZSS_VERSION );
-		
 	}
 	
 	/**

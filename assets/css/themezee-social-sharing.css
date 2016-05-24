@@ -9,7 +9,20 @@
  * @package ThemeZee Social Sharing
  */
 
- 
+/*--------------------------------------------------------------
+# Socicons Font
+---------------------------------------------------------------- */
+@font-face {
+	font-family: 'socicons';
+	src: url('socicons.eot');
+	src: url('socicons.eot?#iefix') format('embedded-opentype'),
+		url("socicons.woff") format("woff"),
+		url('socicons.ttf') format('truetype'),
+		url('socicons.svg#socicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 /*--------------------------------------------------------------
 # General Styles
 ---------------------------------------------------------------- */
