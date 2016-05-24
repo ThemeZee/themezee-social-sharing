@@ -104,6 +104,10 @@ class TZSS_Social_Sharing {
 	 * @return string
 	 */
 	public function share_buttons_sidebar() {
+		
+		if ( ! ( is_singular() or is_archive() or is_home() ) ) {
+			return;
+		}
 
 		if( true == $this->settings['locations']['sidebar'] ) {
 		
@@ -194,9 +198,9 @@ class TZSS_Social_Sharing {
 		foreach( $buttons as $key => $button ) {
 		
 			$list .= '<li class="tzss-share-item">';
-			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="'. $button['url'] .'" target="_blank">';
-			$list .= '<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
-			$list .= '</a></span>';
+			$list .= 	'<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="'. $button['url'] .'" target="_blank">';
+			$list .= 		'<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
+			$list .= 	'</a></span>';
 			$list .= '</li>';
 		
 		}
@@ -215,21 +219,43 @@ class TZSS_Social_Sharing {
 	 * @return array
 	 */
 	private function share_buttons() {
-	
-		// Get current page URL 
-		$page_url = get_permalink();
- 
-		// Get current page title
-		$page_title = str_replace( ' ', '%20', get_the_title() );
-	
+		
 		// Create Button Array
 		$buttons = array();
+		
+		// Set Shared URL and Title
+		if( is_home() or is_archive() ) {
+		
+			// Set Home URL and Blog Title
+			$page_url = esc_url( home_url('/') );
+			$page_title = esc_html( get_bloginfo( 'name' ) );
+			$media = '';
+			
+		} elseif( is_singular() ) {
+			
+			global $post;
+			
+			// Get current page URL 
+			$page_url = esc_url( get_permalink( $post->ID ) );
+	 
+			// Get current page title
+			$page_title = esc_html( str_replace( ' ', '%20', get_the_title( $post->ID ) ) );
+			
+			// Get current page image		
+			$thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
+			$media = $thumbnail ? '&amp;media=' . $thumbnail : '';
+			
+		} else {
+	
+			return array();
+			
+		}
 		
 		// Facebook Button
 		if( true == $this->settings['networks']['facebook'] ) {
 			
 			$buttons['facebook'] = array(
-				'url' => 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url,
+				'url' => 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&amp;t=' .$page_title,
 				'title' => 'Facebook',
 			);
 			
@@ -268,10 +294,8 @@ class TZSS_Social_Sharing {
 		// Pinterest Button
 		if( true == $this->settings['networks']['pinterest'] ) {
 			
-			$thumbnail = get_the_post_thumbnail();
-			
 			$buttons['pinterest'] = array(
-				'url' => 'https://pinterest.com/pin/create/button/?url=' . $page_url . '&amp;media=' . $thumbnail[0] . '&amp;description=' . $page_title,
+				'url' => 'https://pinterest.com/pin/create/button/?url=' . $page_url . $media . '&amp;description=' . $page_title,
 				'title' => 'Pinterest',
 			);
 			
@@ -279,8 +303,6 @@ class TZSS_Social_Sharing {
 		
 		// Email Button
 		if( true == $this->settings['networks']['email'] ) {
-			
-			$thumbnail = get_the_post_thumbnail();
 			
 			$buttons['email'] = array(
 				'url' => 'mailto:?subject=' . $page_title . '&amp;body='. $page_url,
