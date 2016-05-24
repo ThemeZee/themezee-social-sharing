@@ -60,6 +60,9 @@ class TZSS_Social_Sharing {
 		
 		// Display Social Sharing Buttons on Content
 		add_filter( 'the_content', array( $this, 'share_buttons_content' ) );
+		
+		// Display Social Sharing Buttons as Sidebar
+		add_action( 'wp_footer', array( $this, 'share_buttons_sidebar' ) );
 
 	}
 
@@ -95,6 +98,22 @@ class TZSS_Social_Sharing {
 	}
 	
 	/**
+	 * Adds the social sharing buttons to sidebar
+	 *
+	 * @access public
+	 * @return string
+	 */
+	public function share_buttons_sidebar() {
+
+		if( true == $this->settings['locations']['sidebar'] ) {
+		
+			echo $this->display_share_buttons( 'sidebar' );
+			
+		}
+	
+	}
+	
+	/**
 	 * Render social sharing buttons
 	 *
 	 * @access public
@@ -109,9 +128,8 @@ class TZSS_Social_Sharing {
 		
 		// Wrap social icons list
 		$social_sharing = sprintf(
-			'<div class="themezee-social-sharing tzss-%1$s %2$s tzss-clearfix">%3$s</div>',
-			esc_attr( $location ), 
-			esc_attr( $this->container_class() ), 
+			'<div class="themezee-social-sharing %1$s tzss-clearfix">%2$s</div>',
+			esc_attr( $this->container_class( $location ) ), 
 			$this->share_buttons_list()
 		);
 		
@@ -125,29 +143,37 @@ class TZSS_Social_Sharing {
 	 * @access public
 	 * @return array
 	 */
-	private function container_class() {
+	private function container_class( $location ) {
 		
-		$classes = '';
-		
+		// Return early for Sidebar Location
+		if( 'sidebar' == $location ) {
+			
+			return 'tzss-sidebar tzss-socicons';
+			
+		}
+			
+		// Add Content Location Class
+		$classes = 'tzss-' . $location;
+
 		// Add Styling Class
 		if( 'icons' == $this->settings['style'] ) {
 		
-			$classes = 'tzss-style-icons';
+			$classes .= ' tzss-style-icons tzss-socicons';
 			
 		} elseif( 'labels' == $this->settings['style'] ) {
 		
-			$classes = 'tzss-style-labels';
+			$classes .= ' tzss-style-labels';
 			
 		} else {
 			
-			$classes = 'tzss-style-icons-labels';
+			$classes .= ' tzss-style-icons-labels tzss-socicons';
 		
 		}
 		
 		// Add Number of Columns
 		$columns = count( $this->share_buttons() );
 		$classes .= ' tzss-' . $columns . '-columns';
-		
+
 		return $classes;
 		
 	}
@@ -168,8 +194,11 @@ class TZSS_Social_Sharing {
 		foreach( $buttons as $key => $button ) {
 		
 			$list .= '<li class="tzss-share-item">';
-			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="'. $button['url'] .'" target="_blank">' . $button['title'] . '</a></span>';
+			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="'. $button['url'] .'" target="_blank">';
+			$list .= '<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
+			$list .= '</a></span>';
 			$list .= '</li>';
+		
 		}
 		
 		$list .= '</ul>';
@@ -236,16 +265,6 @@ class TZSS_Social_Sharing {
 			
 		}
 		
-		// LinkedIn Button
-		if( true == $this->settings['networks']['linkedin'] ) {
-			
-			$buttons['linkedin'] = array(
-				'url' => 'https://www.linkedin.com/shareArticle?mini=true&amp;url=' . $page_url . '&amp;text='  . $page_title,
-				'title' => 'LinkedIn',
-			);
-			
-		}
-		
 		// Pinterest Button
 		if( true == $this->settings['networks']['pinterest'] ) {
 			
@@ -254,18 +273,6 @@ class TZSS_Social_Sharing {
 			$buttons['pinterest'] = array(
 				'url' => 'https://pinterest.com/pin/create/button/?url=' . $page_url . '&amp;media=' . $thumbnail[0] . '&amp;description=' . $page_title,
 				'title' => 'Pinterest',
-			);
-			
-		}
-		
-		// StumbleUpon Button
-		if( true == $this->settings['networks']['stumbleupon'] ) {
-			
-			$thumbnail = get_the_post_thumbnail();
-			
-			$buttons['stumbleupon'] = array(
-				'url' => 'http://www.stumbleupon.com/badge?url=' . $page_url . '&amp;title=' . $page_title,
-				'title' => 'StumbleUpon',
 			);
 			
 		}

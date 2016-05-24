@@ -278,9 +278,7 @@ class TZSS_Settings {
 					'twitter' => esc_html__( 'Twitter', 'themezee-social-sharing' ),	
 					'googleplus' => esc_html__( 'Google+', 'themezee-social-sharing' ),
 					'buffer' => esc_html__( 'Buffer', 'themezee-social-sharing' ),	
-					'linkedin' => esc_html__( 'LinkedIn', 'themezee-social-sharing' ),	
 					'pinterest' => esc_html__( 'Pinterest', 'themezee-social-sharing' ),
-					'stumbleupon' => esc_html__( 'StumbleUpon', 'themezee-social-sharing' ),
 					'email' => esc_html__( 'Email', 'themezee-social-sharing' ),
 				),
 				'default' => false
@@ -292,6 +290,7 @@ class TZSS_Settings {
 				'options' => array(	
 					'above_content' => esc_html__( 'Display share buttons above content', 'themezee-social-sharing' ),	
 					'below_content' => esc_html__( 'Display share buttons below content', 'themezee-social-sharing' ),
+					'sidebar' => esc_html__( 'Display share buttons in floating sidebar', 'themezee-social-sharing' ),
 				),
 				'default' => false
 			),
