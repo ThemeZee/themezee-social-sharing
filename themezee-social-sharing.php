@@ -2,7 +2,7 @@
 /*
 Plugin Name: ThemeZee Social Sharing
 Plugin URI: https://themezee.com/plugins/social-sharing/
-Description: This plugin adds social sharing icons
+Description: Our simple and user friendly Social Sharing plugin helps you to integrate social sharing buttons for the most popular networks and increase the social reach of your website. Encouraging social sharing was never easier.
 Author: ThemeZee
 Author URI: https://themezee.com/
 Version: 1.0
@@ -159,6 +159,9 @@ class ThemeZee_Social_Sharing {
 		
 		// Enqueue Plugin Stylesheet
 		wp_enqueue_style( 'themezee-social-sharing', TZSS_PLUGIN_URL . 'assets/css/themezee-social-sharing.css', array(), TZSS_VERSION );
+		
+		// Enqueue Social Sharing JS
+		wp_enqueue_script( 'themezee-social-sharing', TZSS_PLUGIN_URL . 'assets/js/themezee-social-sharing.js', array( 'jquery' ), TZSS_VERSION );
 		
 	}
 	
