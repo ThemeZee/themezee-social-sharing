@@ -17,6 +17,10 @@ The *ThemeZee Social Sharing* is a collection of useful widgets, neatly bundled 
 
 For detailed setup instructions, visit the official [Documentation](https://themezee.com/docs/social-sharing-documentation/) page
 
+= Credits =
+This plugin uses the amazing Socicon Font. More information on [socicon.com](http://socicon.com/)
+Socicon is released under SIL Open Font License 1.1 ([http://scripts.sil.org/OFL](http://scripts.sil.org/OFL)).
+
 == Installation ==
 
 1. Activate the plugin

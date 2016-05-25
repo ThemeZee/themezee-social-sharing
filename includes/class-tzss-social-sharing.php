@@ -157,7 +157,7 @@ class TZSS_Social_Sharing {
 		}
 			
 		// Add Content Location Class
-		$classes = 'tzss-' . $location;
+		$classes = 'tzss-content tzss-' . $location;
 
 		// Add Styling Class
 		if( 'icons' == $this->settings['style'] ) {

@@ -295,13 +295,13 @@ class TZSS_Settings {
 				'default' => false
 			),
 			'style' => array(
-				'name' =>  esc_html__( 'Button Style', 'themezee-social-sharingn' ),
+				'name' =>  esc_html__( 'Button Style', 'themezee-social-sharing' ),
 				'section' => 'general',
 				'type' => 'select',
 				'options' => array(	
-					'icons' => esc_html__( 'Display Icons', 'themezee-social-sharingn' ),	
-					'labels' => esc_html__( 'Display Labels', 'themezee-social-sharingn' ),	
-					'both' => esc_html__( 'Display Icons and Labels', 'themezee-social-sharingn' )
+					'icons' => esc_html__( 'Display Icons', 'themezee-social-sharing' ),	
+					'labels' => esc_html__( 'Display Labels', 'themezee-social-sharing' ),	
+					'both' => esc_html__( 'Display Icons and Labels', 'themezee-social-sharing' )
 				),
 				'default' => 'icons'
 			),
