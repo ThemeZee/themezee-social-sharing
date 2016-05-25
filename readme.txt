@@ -2,16 +2,16 @@
 Author URI: https://themezee.com
 Plugin URI: https://themezee.com/plugins/social-sharing/
 Contributors: themezee
-Requires at least: 4.1
+Requires at least: 4.3
 Tested up to: 4.6
 Stable tag: 1.0
 License: GPLv2 or later
 
-A collection of useful widgets, neatly bundled into a single plugin.
+Encourage social sharing on your website with our simple and user friendly Social Sharing plugin. 
 
 == Description ==
 
-The *ThemeZee Social Sharing* is a collection of useful widgets, neatly bundled into a single plugin. This plugin has been designed specifically for ThemeZee WordPress themes but will also work with any theme. 
+Our simple and user friendly *Social Sharing* plugin helps you to integrate social sharing buttons for the most popular networks and increase the social reach of your website. Encouraging social sharing was never easier. 
 
 = Documentation =
 
@@ -24,8 +24,16 @@ Socicon is released under SIL Open Font License 1.1 ([http://scripts.sil.org/OFL
 == Installation ==
 
 1. Activate the plugin
-2. Go to Settings > ThemeZee Plugins > Social Sharing to configure the plugin.
+2. Go to Settings -> ThemeZee Plugins > Social Sharing and configure the plugin
 3. For detailed setup instructions, visit the official [Documentation](https://themezee.com/docs/social-sharing-documentation/) page
+
+== Frequently Asked Questions ==
+
+= Where do I get help to configure this plugin?  =
+Please see the official [Social Sharing Documentation](https://themezee.com/docs/social-sharing-documentation/ "Social Sharing Documentation").
+
+= How do I get updates? =
+Please go to *Settings -> ThemeZee Plugins -> Social Sharing* and enter your license key in order to receive updates. 
 
 == Changelog ==
 
