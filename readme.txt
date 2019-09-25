@@ -37,6 +37,14 @@ Please go to *Settings -> ThemeZee Plugins -> Social Sharing* and enter your lic
 
 == Changelog ==
 
+= 1.1 =
+
+* added social sharing button for WhatsApp
+* added social sharing button for Telegram
+* added social sharing button for LinkedIn
+* removed social sharing button for GooglePlus
+* improved styling and HTML structure
+
 = 1.0.1 =
 
 * fixed bug in license check function which could lead to performance issues
