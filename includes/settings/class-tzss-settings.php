@@ -276,8 +276,12 @@ if ( ! class_exists( 'TZSS_Settings' ) ) :
 					'options' => array(
 						'facebook'  => esc_html__( 'Facebook', 'themezee-social-sharing' ),
 						'twitter'   => esc_html__( 'Twitter', 'themezee-social-sharing' ),
+						'whatsapp'  => esc_html__( 'WhatsApp', 'themezee-social-sharing' ),
+						'telegram'  => esc_html__( 'Telegram', 'themezee-social-sharing' ),
 						'buffer'    => esc_html__( 'Buffer', 'themezee-social-sharing' ),
 						'pinterest' => esc_html__( 'Pinterest', 'themezee-social-sharing' ),
+						'linkedin'  => esc_html__( 'LinkedIn', 'themezee-social-sharing' ),
+						'xing'      => esc_html__( 'Xing', 'themezee-social-sharing' ),
 						'email'     => esc_html__( 'Email', 'themezee-social-sharing' ),
 					),
 					'default' => false,

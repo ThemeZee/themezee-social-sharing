@@ -235,8 +235,8 @@ class TZSS_Social_Sharing {
 			return array();
 		}
 
-		// Facebook Button
-		if ( true == $this->settings['networks']['facebook'] ) {
+		// Facebook Button.
+		if ( true === $this->settings['networks']['facebook'] ) {
 
 			$buttons['facebook'] = array(
 				'url'   => 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&amp;t=' . $page_title,
@@ -244,8 +244,8 @@ class TZSS_Social_Sharing {
 			);
 		}
 
-		// Twitter Button
-		if ( true == $this->settings['networks']['twitter'] ) {
+		// Twitter Button.
+		if ( true === $this->settings['networks']['twitter'] ) {
 
 			$buttons['twitter'] = array(
 				'url'   => 'https://twitter.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url,
@@ -253,8 +253,26 @@ class TZSS_Social_Sharing {
 			);
 		}
 
-		// Buffer Button
-		if ( true == $this->settings['networks']['buffer'] ) {
+		// WhatsApp Button.
+		if ( true === $this->settings['networks']['whatsapp'] ) {
+
+			$buttons['whatsapp'] = array(
+				'url'   => 'https://wa.me/?text=' . $page_title . ': ' . $page_url,
+				'title' => 'WhatsApp',
+			);
+		}
+
+		// Telegram Button.
+		if ( true === $this->settings['networks']['telegram'] ) {
+
+			$buttons['telegram'] = array(
+				'url'   => 'https://telegram.me/share/url?url=' . $page_url . '&amp;text=' . $page_title,
+				'title' => 'Telegram',
+			);
+		}
+
+		// Buffer Button.
+		if ( true === $this->settings['networks']['buffer'] ) {
 
 			$buttons['buffer'] = array(
 				'url'   => 'https://bufferapp.com/add?url=' . $page_url . '&amp;text=' . $page_title,
@@ -262,8 +280,8 @@ class TZSS_Social_Sharing {
 			);
 		}
 
-		// Pinterest Button
-		if ( true == $this->settings['networks']['pinterest'] ) {
+		// Pinterest Button.
+		if ( true === $this->settings['networks']['pinterest'] ) {
 
 			$buttons['pinterest'] = array(
 				'url'   => 'https://pinterest.com/pin/create/button/?url=' . $page_url . $media . '&amp;description=' . $page_title,
@@ -271,8 +289,26 @@ class TZSS_Social_Sharing {
 			);
 		}
 
-		// Email Button
-		if ( true == $this->settings['networks']['email'] ) {
+		// LinkedIn Button.
+		if ( true === $this->settings['networks']['linkedin'] ) {
+
+			$buttons['linkedin'] = array(
+				'url'   => 'https://www.linkedin.com/shareArticle?mini=true&url=' . $page_url . '&amp;title=' . $page_title,
+				'title' => 'LinkedIn',
+			);
+		}
+
+		// Xing Button.
+		if ( true === $this->settings['networks']['xing'] ) {
+
+			$buttons['xing'] = array(
+				'url'   => 'https://www.xing.com/app/user?op=share;url=' . $page_url,
+				'title' => 'Xing',
+			);
+		}
+
+		// Email Button.
+		if ( true === $this->settings['networks']['email'] ) {
 
 			$buttons['email'] = array(
 				'url'   => 'mailto:?subject=' . $page_title . '&amp;body=' . $page_url,
@@ -281,6 +317,5 @@ class TZSS_Social_Sharing {
 		}
 
 		return $buttons;
-
 	}
 }
