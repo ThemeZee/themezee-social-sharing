@@ -127,7 +127,7 @@ class TZSS_Social_Sharing {
 		$social_sharing = sprintf(
 			'<div class="themezee-social-sharing %1$s">%2$s</div>',
 			esc_attr( $this->container_class( $location ) ),
-			$this->share_buttons_list()
+			$this->share_buttons_list( $location )
 		);
 
 		return $social_sharing;
@@ -176,7 +176,7 @@ class TZSS_Social_Sharing {
 	 * @access public
 	 * @return array
 	 */
-	private function share_buttons_list() {
+	private function share_buttons_list( $location ) {
 
 		// Get Sharing Buttons
 		$buttons = $this->share_buttons();
@@ -187,7 +187,8 @@ class TZSS_Social_Sharing {
 
 			$list .= '<li class="tzss-share-item">';
 			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="' . $button['url'] . '" target="_blank">';
-			$list .= '<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
+			$list .= $this->display_social_icon( $location );
+			$list .= '<span class="tzss-text">' . $button['title'] . '</span>';
 			$list .= '</a></span>';
 			$list .= '</li>';
 		}
@@ -195,6 +196,24 @@ class TZSS_Social_Sharing {
 		$list .= '</ul>';
 
 		return $list;
+	}
+
+	/**
+	 * Display social icon
+	 *
+	 * @access public
+	 * @return array
+	 */
+	private function display_social_icon( $location ) {
+
+		// Return early if only labels are displayed.
+		if ( 'labels' == $this->settings['style'] && 'sidebar' !== $location ) {
+			return;
+		}
+
+		$icon = '<span class="tzss-icon"></span>';
+
+		return $icon;
 	}
 
 	/**
