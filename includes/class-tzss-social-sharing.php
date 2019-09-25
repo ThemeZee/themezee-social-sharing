@@ -188,7 +188,7 @@ class TZSS_Social_Sharing {
 			$list .= '<li class="tzss-share-item">';
 			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="' . $button['url'] . '" target="_blank">';
 			$list .= $this->display_social_icon( $location );
-			$list .= '<span class="tzss-text">' . $button['title'] . '</span>';
+			$list .= $this->display_button_text( $location, $button['title'] );
 			$list .= '</a></span>';
 			$list .= '</li>';
 		}
@@ -214,6 +214,28 @@ class TZSS_Social_Sharing {
 		$icon = '<span class="tzss-icon"></span>';
 
 		return $icon;
+	}
+
+	/**
+	 * Display button text
+	 *
+	 * @access public
+	 * @return array
+	 */
+	private function display_button_text( $location, $title ) {
+
+		if ( 'icons' === $this->settings['style'] || 'sidebar' === $location ) {
+
+			return '<span class="tzss-text screen-reader-text">' . $title . '</span>';
+
+		} elseif ( 'labels' == $this->settings['style'] ) {
+
+			return $title;
+
+		} else {
+
+			return '<span class="tzss-text">' . $title . '</span>';
+		}
 	}
 
 	/**

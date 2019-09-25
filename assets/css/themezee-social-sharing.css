@@ -185,10 +185,6 @@
 	min-width: 60px;
 }
 
-.tzss-style-icons .tzss-link .tzss-text {
-	font-size: 0;
-}
-
 /* Label Style */
 .tzss-style-labels .tzss-share-buttons-list .tzss-share-item {
 	min-width: 125px;
@@ -248,10 +244,6 @@
 
 .tzss-sidebar .tzss-button .tzss-link {
 	padding: 0;
-}
-
-.tzss-sidebar .tzss-link .tzss-text {
-	font-size: 0;
 }
 
 .tzss-sidebar .tzss-link .tzss-icon:before {
