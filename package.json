@@ -1,0 +1,20 @@
+{
+  "name": "themezee-social-sharing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1",
+	"export": "git archive HEAD -9 --prefix themezee-social-sharing/ --format=zip > ../../themezee-social-sharing.zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThemeZee/themezee-social-sharing.git"
+  },
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ThemeZee/themezee-social-sharing/issues"
+  },
+  "homepage": "https://github.com/ThemeZee/themezee-social-sharing#readme"
+}
