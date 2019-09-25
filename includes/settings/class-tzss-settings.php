@@ -598,7 +598,11 @@ if ( ! class_exists( 'TZSS_Settings' ) ) :
 			);
 
 			// Call the custom API.
-			$response = wp_remote_post( TZSS_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+			$response = wp_remote_post( TZSS_STORE_API_URL, array(
+				'timeout'   => 35,
+				'sslverify' => true,
+				'body'      => $api_params,
+			) );
 
 			// make sure the response came back okay.
 			if ( is_wp_error( $response ) ) {
@@ -675,7 +679,11 @@ if ( ! class_exists( 'TZSS_Settings' ) ) :
 					);
 
 					// Call the custom API.
-					$response = wp_remote_post( TZSS_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
+					$response = wp_remote_post( TZSS_STORE_API_URL, array(
+						'timeout'   => 25,
+						'sslverify' => true,
+						'body'      => $api_params,
+					) );
 
 					// Make sure the response came back okay.
 					if ( is_wp_error( $response ) ) {

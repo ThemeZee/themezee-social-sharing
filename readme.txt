@@ -3,8 +3,8 @@ Author URI: https://themezee.com
 Plugin URI: https://themezee.com/plugins/social-sharing/
 Contributors: themezee
 Requires at least: 4.3
-Tested up to: 5.0
-Stable tag: 1.0.1
+Tested up to: 5.3
+Stable tag: 1.1
 License: GPLv2 or later
 
 Encourage social sharing on your website with our simple and user friendly Social Sharing plugin. 

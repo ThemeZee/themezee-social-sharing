@@ -6,10 +6,11 @@
  *
  * @package ThemeZee Social Sharing
  */
- 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Displays Social Sharing Buttons
@@ -23,7 +24,7 @@ class TZSS_Social_Sharing {
 	 * @var instance The one true TZSS_Social_Sharing instance
 	 */
 	private static $instance;
-	
+
 	/**
 	 * Settings for social sharing buttons
 	 *
@@ -31,20 +32,19 @@ class TZSS_Social_Sharing {
 	 * @var    array
 	 */
 	public $settings = array();
-	
+
 	/**
-     * Creates or returns an instance of this class.
-     *
-     * @return TZSS_Social_Sharing A single instance of this class.
-     */
+	 * Creates or returns an instance of this class.
+	 *
+	 * @return TZSS_Social_Sharing A single instance of this class.
+	 */
 	public static function instance() {
- 
-        if ( null == self::$instance ) {
-            self::$instance = new self();
-        }
- 
-        return self::$instance;
-    }
+		if ( null == self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	/**
 	 * Sets up the related posts properties based on function parameters and user options.
@@ -53,17 +53,16 @@ class TZSS_Social_Sharing {
 	 * @return void
 	 */
 	public function __construct() {
-		
+
 		// Get Social Sharing Settings
-		$instance = TZSS_Settings::instance();
+		$instance       = TZSS_Settings::instance();
 		$this->settings = $instance->get_all();
-		
+
 		// Display Social Sharing Buttons on Content
 		add_filter( 'the_content', array( $this, 'share_buttons_content' ) );
-		
+
 		// Display Social Sharing Buttons as Sidebar
 		add_action( 'wp_footer', array( $this, 'share_buttons_sidebar' ) );
-
 	}
 
 	/**
@@ -73,30 +72,25 @@ class TZSS_Social_Sharing {
 	 * @return string
 	 */
 	public function share_buttons_content( $content ) {
-		
+
 		// Only display share buttons in single post and pages
 		if ( ! ( is_singular() && is_main_query() ) ) {
 			return $content;
 		}
-		
+
 		// Add Social Icons above Content
-		if( true == $this->settings['locations']['above_content'] ) {
-		
+		if ( true == $this->settings['locations']['above_content'] ) {
 			$content = $this->display_share_buttons( 'above-content' ) . $content;
-			
 		}
-		
+
 		// Add Social Icons below Content
-		if( true == $this->settings['locations']['below_content'] ) {
-		
+		if ( true == $this->settings['locations']['below_content'] ) {
 			$content .= $this->display_share_buttons( 'below-content' );
-			
 		}
-		
+
 		return $content;
-		
 	}
-	
+
 	/**
 	 * Adds the social sharing buttons to sidebar
 	 *
@@ -104,19 +98,18 @@ class TZSS_Social_Sharing {
 	 * @return string
 	 */
 	public function share_buttons_sidebar() {
-		
+
 		if ( ! ( is_singular() or is_archive() or is_home() ) ) {
 			return;
 		}
 
-		if( true == $this->settings['locations']['sidebar'] ) {
-		
+		if ( true == $this->settings['locations']['sidebar'] ) {
+
 			echo $this->display_share_buttons( 'sidebar' );
-			
+
 		}
-	
 	}
-	
+
 	/**
 	 * Render social sharing buttons
 	 *
@@ -124,23 +117,22 @@ class TZSS_Social_Sharing {
 	 * @return array
 	 */
 	private function display_share_buttons( $location ) {
-	
+
 		// Return early if no buttons are there to be displayed
-		if( count( $this->share_buttons() ) < 1 ) {
+		if ( count( $this->share_buttons() ) < 1 ) {
 			return;
 		}
-		
+
 		// Wrap social icons list
 		$social_sharing = sprintf(
 			'<div class="themezee-social-sharing %1$s tzss-clearfix">%2$s</div>',
-			esc_attr( $this->container_class( $location ) ), 
+			esc_attr( $this->container_class( $location ) ),
 			$this->share_buttons_list()
 		);
-		
+
 		return $social_sharing;
-		
 	}
-	
+
 	/**
 	 * Get social sharing container class
 	 *
@@ -148,40 +140,36 @@ class TZSS_Social_Sharing {
 	 * @return array
 	 */
 	private function container_class( $location ) {
-		
+
 		// Return early for Sidebar Location
-		if( 'sidebar' == $location ) {
-			
+		if ( 'sidebar' == $location ) {
 			return 'tzss-sidebar tzss-socicons';
-			
 		}
-			
+
 		// Add Content Location Class
 		$classes = 'tzss-content tzss-' . $location;
 
 		// Add Styling Class
-		if( 'icons' == $this->settings['style'] ) {
-		
+		if ( 'icons' == $this->settings['style'] ) {
+
 			$classes .= ' tzss-style-icons tzss-socicons';
-			
-		} elseif( 'labels' == $this->settings['style'] ) {
-		
+
+		} elseif ( 'labels' == $this->settings['style'] ) {
+
 			$classes .= ' tzss-style-labels';
-			
+
 		} else {
-			
+
 			$classes .= ' tzss-style-icons-labels tzss-socicons';
-		
 		}
-		
+
 		// Add Number of Columns
-		$columns = count( $this->share_buttons() );
+		$columns  = count( $this->share_buttons() );
 		$classes .= ' tzss-' . $columns . '-columns';
 
 		return $classes;
-		
 	}
-	
+
 	/**
 	 * Display social sharing button list
 	 *
@@ -189,29 +177,26 @@ class TZSS_Social_Sharing {
 	 * @return array
 	 */
 	private function share_buttons_list() {
-	
+
 		// Get Sharing Buttons
 		$buttons = $this->share_buttons();
-		
+
 		$list = '<ul class="tzss-share-buttons-list">';
-		
-		foreach( $buttons as $key => $button ) {
-		
+
+		foreach ( $buttons as $key => $button ) {
+
 			$list .= '<li class="tzss-share-item">';
-			$list .= 	'<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="'. $button['url'] .'" target="_blank">';
-			$list .= 		'<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
-			$list .= 	'</a></span>';
+			$list .= '<span class="tzss-button tzss-' . $key . '"><a class="tzss-link" href="' . $button['url'] . '" target="_blank">';
+			$list .= '<span class="tzss-icon"></span><span class="tzss-text">' . $button['title'] . '</span>';
+			$list .= '</a></span>';
 			$list .= '</li>';
-		
 		}
-		
+
 		$list .= '</ul>';
-		
+
 		return $list;
-		
 	}
-	
-	
+
 	/**
 	 * Return social sharing buttons
 	 *
@@ -219,100 +204,92 @@ class TZSS_Social_Sharing {
 	 * @return array
 	 */
 	private function share_buttons() {
-		
+
 		// Create Button Array
 		$buttons = array();
-		
+
 		// Set Shared URL and Title
-		if( is_home() or is_archive() ) {
-		
+		if ( is_home() or is_archive() ) {
+
 			// Set Home URL and Blog Title
-			$page_url = esc_url( home_url('/') );
+			$page_url   = esc_url( home_url( '/' ) );
 			$page_title = esc_html( get_bloginfo( 'name' ) );
-			$media = '';
-			
-		} elseif( is_singular() ) {
-			
+			$media      = '';
+
+		} elseif ( is_singular() ) {
+
 			global $post;
-			
-			// Get current page URL 
+
+			// Get current page URL.
 			$page_url = esc_url( get_permalink( $post->ID ) );
-	 
-			// Get current page title
+
+			// Get current page title.
 			$page_title = esc_html( str_replace( ' ', '%20', get_the_title( $post->ID ) ) );
-			
-			// Get current page image		
+
+			// Get current page image.
 			$thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-			$media = $thumbnail ? '&amp;media=' . $thumbnail : '';
-			
+			$media     = $thumbnail ? '&amp;media=' . $thumbnail : '';
+
 		} else {
-	
+
 			return array();
-			
 		}
-		
+
 		// Facebook Button
-		if( true == $this->settings['networks']['facebook'] ) {
-			
+		if ( true == $this->settings['networks']['facebook'] ) {
+
 			$buttons['facebook'] = array(
-				'url' => 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&amp;t=' .$page_title,
+				'url'   => 'https://www.facebook.com/sharer/sharer.php?u=' . $page_url . '&amp;t=' . $page_title,
 				'title' => 'Facebook',
 			);
-			
 		}
-		
+
 		// Twitter Button
-		if( true == $this->settings['networks']['twitter'] ) {
-			
+		if ( true == $this->settings['networks']['twitter'] ) {
+
 			$buttons['twitter'] = array(
-				'url' => 'https://twitter.com/intent/tweet?text=' . $page_title . '&amp;url=' .$page_url,
+				'url'   => 'https://twitter.com/intent/tweet?text=' . $page_title . '&amp;url=' . $page_url,
 				'title' => 'Twitter',
 			);
-			
 		}
-		
+
 		// Google+ Button
-		if( true == $this->settings['networks']['googleplus'] ) {
-			
+		if ( true == $this->settings['networks']['googleplus'] ) {
+
 			$buttons['googleplus'] = array(
-				'url' => 'https://plus.google.com/share?url=' . $page_url . '&amp;t=' .$page_title,
+				'url'   => 'https://plus.google.com/share?url=' . $page_url . '&amp;t=' . $page_title,
 				'title' => 'Google+',
 			);
-			
 		}
-		
+
 		// Buffer Button
-		if( true == $this->settings['networks']['buffer'] ) {
-			
+		if ( true == $this->settings['networks']['buffer'] ) {
+
 			$buttons['buffer'] = array(
-				'url' => 'https://bufferapp.com/add?url=' . $page_url . '&amp;text=' . $page_title,
+				'url'   => 'https://bufferapp.com/add?url=' . $page_url . '&amp;text=' . $page_title,
 				'title' => 'Buffer',
 			);
-			
 		}
-		
+
 		// Pinterest Button
-		if( true == $this->settings['networks']['pinterest'] ) {
-			
+		if ( true == $this->settings['networks']['pinterest'] ) {
+
 			$buttons['pinterest'] = array(
-				'url' => 'https://pinterest.com/pin/create/button/?url=' . $page_url . $media . '&amp;description=' . $page_title,
+				'url'   => 'https://pinterest.com/pin/create/button/?url=' . $page_url . $media . '&amp;description=' . $page_title,
 				'title' => 'Pinterest',
 			);
-			
 		}
-		
+
 		// Email Button
-		if( true == $this->settings['networks']['email'] ) {
-			
+		if ( true == $this->settings['networks']['email'] ) {
+
 			$buttons['email'] = array(
-				'url' => 'mailto:?subject=' . $page_title . '&amp;body='. $page_url,
+				'url'   => 'mailto:?subject=' . $page_title . '&amp;body=' . $page_url,
 				'title' => 'Email',
 			);
-			
 		}
-		
+
 		return $buttons;
-		
+
 	}
-	
 }

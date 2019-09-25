@@ -5,14 +5,14 @@ Plugin URI: https://themezee.com/plugins/social-sharing/
 Description: Our simple and user friendly Social Sharing plugin helps you to integrate social sharing buttons for the most popular networks and increase the social reach of your website. Encouraging social sharing was never easier.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.0.1
+Version: 1.1
 Text Domain: themezee-social-sharing
 Domain Path: /languages/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ThemeZee Social Sharing
-Copyright(C) 2018, ThemeZee.com - support@themezee.com
+Copyright(C) 2019, ThemeZee.com - support@themezee.com
 
 */
 
@@ -68,7 +68,7 @@ if ( ! class_exists( 'ThemeZee_Social_Sharing' ) ) :
 			define( 'TZSS_NAME', 'ThemeZee Social Sharing' );
 
 			// Define Version Number
-			define( 'TZSS_VERSION', '1.0.1' );
+			define( 'TZSS_VERSION', '1.1' );
 
 			// Define Plugin Name
 			define( 'TZSS_PRODUCT_ID', 56016 );
