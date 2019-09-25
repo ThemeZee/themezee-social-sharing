@@ -125,7 +125,7 @@ class TZSS_Social_Sharing {
 
 		// Wrap social icons list
 		$social_sharing = sprintf(
-			'<div class="themezee-social-sharing %1$s tzss-clearfix">%2$s</div>',
+			'<div class="themezee-social-sharing %1$s">%2$s</div>',
 			esc_attr( $this->container_class( $location ) ),
 			$this->share_buttons_list()
 		);

@@ -23,25 +23,6 @@
 }
 
 /*--------------------------------------------------------------
-# General Styles
----------------------------------------------------------------- */
-
-/* Clearing Floats */
-.tzss-clearfix:before, 
-.tzss-clearfix:after {  
-	content: " ";
-	display: table;  
-}  
-
-.tzss-clearfix:after {  
-	clear: both;
-}  
-
-.tzss-clearfix {
-    *zoom: 1; /* For IE 6/7 only */  
-}
-
-/*--------------------------------------------------------------
 # Layout
 ---------------------------------------------------------------- */
 .themezee-social-sharing {
@@ -87,7 +68,6 @@
 	color: #fff;
 	background: none;
 	border: none;
-	vertical-align: top;
 	text-align: center;
 }
 
@@ -220,19 +200,22 @@
 }
 
 .tzss-style-icons-labels .tzss-link {
+	display: flex;
 	padding: 0;
+	text-align: left;
 }
 
 .tzss-style-icons-labels .tzss-link .tzss-text {
 	display: inline-block;
-	padding: 10px;
+	padding: 10px 15px;
 }
 
 .tzss-style-icons-labels .tzss-link .tzss-icon:before {
-	float: left;
-	padding: 12px;
+	padding: 13px;
 	background: rgba(0,0,0,0.2);
 	font-size: 18px;
+	height: 100%;
+	vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
