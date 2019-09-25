@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeZee Social Sharing\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-11-05 09:51+0100\n"
+"POT-Creation-Date: 2019-09-25 16:46+0200\n"
 "PO-Revision-Date: 2016-05-24 16:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -21,25 +21,25 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: includes/admin/class-themezee-plugins-page.php:42
 #: includes/admin/class-themezee-plugins-page.php:43
-#: includes/admin/class-themezee-plugins-page.php:44
-#: includes/admin/class-themezee-plugins-page.php:113
-#: includes/admin/class-themezee-plugins-page.php:118
+#: includes/admin/class-themezee-plugins-page.php:109
+#: includes/admin/class-themezee-plugins-page.php:114
 msgid "ThemeZee Plugins"
 msgstr ""
 
-#: includes/admin/class-themezee-plugins-page.php:113
+#: includes/admin/class-themezee-plugins-page.php:109
 msgid "plugins"
 msgstr ""
 
-#: includes/admin/class-themezee-plugins-page.php:120
+#: includes/admin/class-themezee-plugins-page.php:116
 #, php-format
 msgid ""
 "You need more features and functionality? Extend your website with our "
 "customized %s."
 msgstr ""
 
-#: includes/admin/class-themezee-plugins-page.php:143
+#: includes/admin/class-themezee-plugins-page.php:138
 msgid "Overview"
 msgstr ""
 
@@ -64,8 +64,8 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: includes/settings/class-tzss-settings-page.php:41
-#: includes/settings/class-tzss-settings-page.php:59
+#: includes/settings/class-tzss-settings-page.php:42
+#: includes/settings/class-tzss-settings-page.php:58
 msgid "Social Sharing"
 msgstr ""
 
@@ -97,82 +97,94 @@ msgid "Twitter"
 msgstr ""
 
 #: includes/settings/class-tzss-settings.php:279
-msgid "Google+"
+msgid "WhatsApp"
 msgstr ""
 
 #: includes/settings/class-tzss-settings.php:280
-msgid "Buffer"
+msgid "Telegram"
 msgstr ""
 
 #: includes/settings/class-tzss-settings.php:281
-msgid "Pinterest"
+msgid "Buffer"
 msgstr ""
 
 #: includes/settings/class-tzss-settings.php:282
+msgid "Pinterest"
+msgstr ""
+
+#: includes/settings/class-tzss-settings.php:283
+msgid "LinkedIn"
+msgstr ""
+
+#: includes/settings/class-tzss-settings.php:284
+msgid "Xing"
+msgstr ""
+
+#: includes/settings/class-tzss-settings.php:285
 msgid "Email"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:287
+#: includes/settings/class-tzss-settings.php:290
 msgid "Choose Locations"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:291
+#: includes/settings/class-tzss-settings.php:294
 msgid "Display share buttons above content"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:292
+#: includes/settings/class-tzss-settings.php:295
 msgid "Display share buttons below content"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:293
+#: includes/settings/class-tzss-settings.php:296
 msgid "Display share buttons in floating sidebar"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:298
+#: includes/settings/class-tzss-settings.php:301
 msgid "Button Style"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:302
+#: includes/settings/class-tzss-settings.php:305
 msgid "Display Icons"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:303
+#: includes/settings/class-tzss-settings.php:306
 msgid "Display Labels"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:304
+#: includes/settings/class-tzss-settings.php:307
 msgid "Display Icons and Labels"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:309
-#: includes/settings/class-tzss-settings.php:440
+#: includes/settings/class-tzss-settings.php:312
 #: includes/settings/class-tzss-settings.php:443
+#: includes/settings/class-tzss-settings.php:446
 msgid "Activate License"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:427
+#: includes/settings/class-tzss-settings.php:430
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:428
+#: includes/settings/class-tzss-settings.php:431
 msgid "Your license is valid!"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:437
+#: includes/settings/class-tzss-settings.php:440
 msgid "Renew Your License"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:438
+#: includes/settings/class-tzss-settings.php:441
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:441
+#: includes/settings/class-tzss-settings.php:444
 msgid "Your license is invalid!"
 msgstr ""
 
-#: includes/settings/class-tzss-settings.php:536
+#: includes/settings/class-tzss-settings.php:539
 #, php-format
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."

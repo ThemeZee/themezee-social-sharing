@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeZee Social Sharing\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-11-05 09:51+0100\n"
-"PO-Revision-Date: 2018-11-05 09:53+0100\n"
+"POT-Creation-Date: 2019-09-25 16:46+0200\n"
+"PO-Revision-Date: 2019-09-25 16:47+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de\n"
@@ -13,21 +13,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
+#: includes/admin/class-themezee-plugins-page.php:42
 #: includes/admin/class-themezee-plugins-page.php:43
-#: includes/admin/class-themezee-plugins-page.php:44
-#: includes/admin/class-themezee-plugins-page.php:113
-#: includes/admin/class-themezee-plugins-page.php:118
+#: includes/admin/class-themezee-plugins-page.php:109
+#: includes/admin/class-themezee-plugins-page.php:114
 msgid "ThemeZee Plugins"
 msgstr "ThemeZee Plugins"
 
-#: includes/admin/class-themezee-plugins-page.php:113
+#: includes/admin/class-themezee-plugins-page.php:109
 msgid "plugins"
 msgstr "Plugins"
 
-#: includes/admin/class-themezee-plugins-page.php:120
+#: includes/admin/class-themezee-plugins-page.php:116
 #, php-format
 msgid ""
 "You need more features and functionality? Extend your website with our "
@@ -36,7 +36,7 @@ msgstr ""
 "Du brauchst mehr Features und Funktionalität? Erweitere deine Webseite mit "
 "unseren %s."
 
-#: includes/admin/class-themezee-plugins-page.php:143
+#: includes/admin/class-themezee-plugins-page.php:138
 msgid "Overview"
 msgstr "Übersicht"
 
@@ -65,8 +65,8 @@ msgstr "Du hast keine Berechtigung zur Installation von Plugin Updates"
 msgid "Error"
 msgstr "Fehler"
 
-#: includes/settings/class-tzss-settings-page.php:41
-#: includes/settings/class-tzss-settings-page.php:59
+#: includes/settings/class-tzss-settings-page.php:42
+#: includes/settings/class-tzss-settings-page.php:58
 msgid "Social Sharing"
 msgstr "Social Sharing"
 
@@ -100,72 +100,84 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: includes/settings/class-tzss-settings.php:279
-msgid "Google+"
-msgstr "Google+"
+msgid "WhatsApp"
+msgstr "WhatsApp"
 
 #: includes/settings/class-tzss-settings.php:280
+msgid "Telegram"
+msgstr "Telegram"
+
+#: includes/settings/class-tzss-settings.php:281
 msgid "Buffer"
 msgstr "Buffer"
 
-#: includes/settings/class-tzss-settings.php:281
+#: includes/settings/class-tzss-settings.php:282
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: includes/settings/class-tzss-settings.php:282
+#: includes/settings/class-tzss-settings.php:283
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/settings/class-tzss-settings.php:284
+msgid "Xing"
+msgstr "Xing"
+
+#: includes/settings/class-tzss-settings.php:285
 msgid "Email"
 msgstr "Email"
 
-#: includes/settings/class-tzss-settings.php:287
+#: includes/settings/class-tzss-settings.php:290
 msgid "Choose Locations"
 msgstr "Wähle Platzierung"
 
-#: includes/settings/class-tzss-settings.php:291
+#: includes/settings/class-tzss-settings.php:294
 msgid "Display share buttons above content"
 msgstr "Zeige Sharing Buttons über dem Inhalt"
 
-#: includes/settings/class-tzss-settings.php:292
+#: includes/settings/class-tzss-settings.php:295
 msgid "Display share buttons below content"
 msgstr "Zeige Sharing Buttons unter dem Inhalt"
 
-#: includes/settings/class-tzss-settings.php:293
+#: includes/settings/class-tzss-settings.php:296
 msgid "Display share buttons in floating sidebar"
 msgstr "Zeige Sharing Buttons in Sidebar"
 
-#: includes/settings/class-tzss-settings.php:298
+#: includes/settings/class-tzss-settings.php:301
 msgid "Button Style"
 msgstr "Button Style"
 
-#: includes/settings/class-tzss-settings.php:302
+#: includes/settings/class-tzss-settings.php:305
 msgid "Display Icons"
 msgstr "Zeige Icons"
 
-#: includes/settings/class-tzss-settings.php:303
+#: includes/settings/class-tzss-settings.php:306
 msgid "Display Labels"
 msgstr "Zeige Labels"
 
-#: includes/settings/class-tzss-settings.php:304
+#: includes/settings/class-tzss-settings.php:307
 msgid "Display Icons and Labels"
 msgstr "Zeige Icons und Labels"
 
-#: includes/settings/class-tzss-settings.php:309
-#: includes/settings/class-tzss-settings.php:440
+#: includes/settings/class-tzss-settings.php:312
 #: includes/settings/class-tzss-settings.php:443
+#: includes/settings/class-tzss-settings.php:446
 msgid "Activate License"
 msgstr "Lizenz aktivieren"
 
-#: includes/settings/class-tzss-settings.php:427
+#: includes/settings/class-tzss-settings.php:430
 msgid "Deactivate License"
 msgstr "Lizenz deaktivieren"
 
-#: includes/settings/class-tzss-settings.php:428
+#: includes/settings/class-tzss-settings.php:431
 msgid "Your license is valid!"
 msgstr "Deine Lizenz ist gültig!"
 
-#: includes/settings/class-tzss-settings.php:437
+#: includes/settings/class-tzss-settings.php:440
 msgid "Renew Your License"
 msgstr "Lizenz verlängern"
 
-#: includes/settings/class-tzss-settings.php:438
+#: includes/settings/class-tzss-settings.php:441
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
@@ -173,11 +185,11 @@ msgstr ""
 "Deine Lizenz ist abgelaufen. Bitte erneuere sie, um weiterhin Updates und "
 "Support zu erhalten!"
 
-#: includes/settings/class-tzss-settings.php:441
+#: includes/settings/class-tzss-settings.php:444
 msgid "Your license is invalid!"
 msgstr "Deine Lizenz ist ungültig!"
 
-#: includes/settings/class-tzss-settings.php:536
+#: includes/settings/class-tzss-settings.php:539
 #, php-format
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
