@@ -253,15 +253,6 @@ class TZSS_Social_Sharing {
 			);
 		}
 
-		// Google+ Button
-		if ( true == $this->settings['networks']['googleplus'] ) {
-
-			$buttons['googleplus'] = array(
-				'url'   => 'https://plus.google.com/share?url=' . $page_url . '&amp;t=' . $page_title,
-				'title' => 'Google+',
-			);
-		}
-
 		// Buffer Button
 		if ( true == $this->settings['networks']['buffer'] ) {
 

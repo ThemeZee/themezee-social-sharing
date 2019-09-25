@@ -134,10 +134,6 @@
     background: #3b5998;
 }
  
-.tzss-googleplus {
-    background: #dc4e41;
-}
- 
 .tzss-buffer {
     background: #323b43;
 }
@@ -184,7 +180,6 @@
 
 .tzss-socicons .tzss-twitter .tzss-link .tzss-icon:before { content: "\e040"; }
 .tzss-socicons .tzss-facebook .tzss-link .tzss-icon:before { content: "\e041"; }
-.tzss-socicons .tzss-googleplus .tzss-link .tzss-icon:before { content: "\e042"; }
 .tzss-socicons .tzss-buffer .tzss-link .tzss-icon:before { content: "\e018"; }
 .tzss-socicons .tzss-linkedin .tzss-link .tzss-icon:before { content: "\e049"; }
 .tzss-socicons .tzss-pinterest .tzss-link .tzss-icon:before { content: "\e043"; }
