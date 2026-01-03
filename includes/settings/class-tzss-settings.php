@@ -94,28 +94,26 @@ if ( ! class_exists( 'TZSS_Settings' ) ) :
 		 * @return array
 		*/
 		public function default_settings() {
-
-			$default_settings = array();
-
-			foreach ( $this->get_registered_settings() as $key => $option ) :
-
-				if ( 'multicheck' === $option['type'] ) :
-
-					foreach ( $option['options'] as $index => $value ) :
-
-						$default_settings[ $key ][ $index ] = isset( $option['default'] ) ? $option['default'] : false;
-
-					endforeach;
-
-				else :
-
-					$default_settings[ $key ] = isset( $option['default'] ) ? $option['default'] : false;
-
-				endif;
-
-			endforeach;
-
-			return $default_settings;
+			return [
+				'networks' => [
+					'facebook' => false,
+					'twitter' => false,
+					'whatsapp' => false,
+					'telegram' => false,
+					'buffer' => false,
+					'pinterest' => false,
+					'linkedin' => false,
+					'xing' => false,
+					'email' => false,
+				],
+				'locations' => [
+					'above_content' => false,
+					'below_content' => false,
+					'sidebar' => false,
+				],
+				'style' => 'icons',
+				'activate_license' => '',
+			];
 		}
 
 		/**
